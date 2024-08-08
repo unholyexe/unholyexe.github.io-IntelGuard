@@ -3,38 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service for Discord Bot</title>
+    <title>Terms of Service for IntelGuard</title>
     <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.8;
             margin: 20px;
             padding: 20px;
-            background-color: #f4f4f4;
-        }
-        h1 {
+            background-color: #f0f2f5;
             color: #333;
         }
+
+        h1, h2 {
+            margin-top: 0;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        h1 {
+            color: #0044cc;
+            font-size: 2.5em;
+        }
+
         h2 {
-            color: #444;
+            color: #333;
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
         }
-        p {
-            margin-bottom: 10px;
+
+        p, ul {
+            opacity: 0;
+            animation: slideIn 0.8s ease-in-out forwards;
+            animation-delay: 0.3s;
+            margin-bottom: 15px;
         }
+
         ul {
             margin-left: 20px;
+            list-style-type: disc;
         }
+
         a {
             color: #0044cc;
             text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
+
         a:hover {
-            text-decoration: underline;
+            color: #002a80;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Terms of Service for Discord Bot</h1>
+    <h1>Terms of Service for IntelGuard</h1>
     <p>These Terms of Service ("Terms") govern the use of the Discord bot ("Bot") provided by [Your Company/Developer Name] ("Provider"). By adding the Bot to your Discord server or using any of its features, you agree to comply with these Terms. If you do not agree to these Terms, please refrain from using the Bot.</p>
 
     <h2>License and Ownership:</h2>
