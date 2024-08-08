@@ -5,47 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IntelGuard</title>
     <style>
+        @keyframes fadeInSlideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleUp {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fafafa;
+            background-color: #f0f2f5;
             color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
+        
         header {
-            background: #0044cc;
+            background: linear-gradient(90deg, #0044cc, #002a80);
             color: #fff;
-            padding: 20px;
+            padding: 30px 0;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeInSlideDown 1s ease-out;
         }
+
         h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
+            font-weight: 700;
         }
+
         .container {
             width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 30px;
             background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            animation: scaleUp 1s ease-out;
+            transition: transform 0.3s;
         }
+
+        .container:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 30px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            font-size: 2.2em;
+            color: #002a80;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0044cc;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.8em;
+            color: #0044cc;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        ul {
+            margin: 20px 0;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
         a {
             color: #0044cc;
             text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
         }
+
         a:hover {
-            text-decoration: underline;
+            color: #002a80;
+            transform: scale(1.1);
         }
+
         footer {
-            background: #0044cc;
+            background: #002a80;
             color: #fff;
             text-align: center;
-            padding: 10px;
+            padding: 15px;
             position: fixed;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            animation: slideUp 1s ease-out;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.5em;
+            }
+            .container {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -57,6 +165,29 @@
     <div class="container">
         <h2>Secure Your Discord Server</h2>
         <p>IntelGuard specializes in enhancing the security of your Discord server. Our solutions are designed to protect against unauthorized access, manage user permissions, and prevent disruptive behavior. Explore our tools and resources to keep your community safe and secure.</p>
+        
+        <h3>Key Features</h3>
+        <p><strong>IntelGuard</strong> is a robust Discord bot designed to enhance your server's security and streamline administrative tasks. With advanced logging, IP tracking, and automated moderation features, IntelGuard ensures that your community remains safe and well-managed.</p>
+
+        <ul>
+            <li><strong>Security Alerts:</strong> Instantly notify admins of potential threats, such as new accounts with suspiciously short creation times or members with similar usernames, possibly indicating alt accounts.</li>
+            <li><strong>Invite Monitoring:</strong> Track invite links and alert admins when an invite reaches a high usage threshold, helping prevent raids and unwanted guests.</li>
+            <li><strong>Automated IP Logging:</strong> Collect IP addresses (via external logging) when members join, enabling tracking and identification of possible alt accounts or suspicious behavior.</li>
+            <li><strong>Manual Alt Management:</strong> Admins can manually add or remove known alt accounts, ensuring accurate tracking of multiple accounts under the same user.</li>
+            <li><strong>Reporting System:</strong> Users can report suspected alt accounts directly to admins, with automatic logging and notifications.</li>
+            <li><strong>Advanced Logging:</strong> Maintain detailed logs of security events, command usage, and user reports, easily accessible to admins for review.</li>
+        </ul>
+
+        <h3>Administrative Abilities</h3>
+        <ul>
+            <li><strong>Command Autocomplete:</strong> Help users quickly find and execute commands with command autocomplete support, enhancing user experience.</li>
+            <li><strong>Custom Help Command:</strong> An easy-to-use custom help command that displays all available commands with descriptions, making it simple for users to find the help they need.</li>
+            <li><strong>Mute, Ban, and Kick Members:</strong> Admins can mute, ban, or kick members directly through commands, giving them the tools they need to maintain order.</li>
+            <li><strong>User Moderation:</strong> Mute disruptive members, ban harmful users, or kick members violating server rules—all with simple commands.</li>
+            <li><strong>Member Tracking:</strong> Automatically monitor new members and alert admins about accounts that may pose a security risk.</li>
+            <li><strong>Task Scheduling:</strong> Run periodic checks on server members, ensuring ongoing vigilance against potential security threats.</li>
+        </ul>
+
         <p>For more details, visit our <a href="Privacy%20Policy.html">Privacy Policy</a> and <a href="Terms%20of%20Service.html">Terms of Service</a>.</p>
     </div>
 
